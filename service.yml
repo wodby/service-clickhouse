@@ -11,9 +11,10 @@ labels:
 
 options:
 - version: '26.3'
-  tag: '26.3.17.110'
+  tag: '26.3.31.5'
   default: true
 
+  eol: '2027-03-26T00:00:00+00:00'
 endpoints:
 - name: clickhouse
   ports:
