@@ -1,5 +1,6 @@
 name: clickhouse
 title: ClickHouse
+guidance: GUIDANCE.md
 icon: clickhouse
 type: datastore
 scalable: false
