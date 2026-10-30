@@ -23,7 +23,6 @@ endpoints:
     number: 8123
     protocol: http
     main: true
-    private: true
   - name: native
     number: 9000
     protocol: tcp
