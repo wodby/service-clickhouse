@@ -15,9 +15,11 @@ What Wodby sets up for this ClickHouse service. It runs the official `clickhouse
 Port `8123` is the service's main HTTP endpoint, so it gets a public HTTPS address. `9000` stays private.
 
 - The address's root answers `Ok.`. Open `/play` to run queries and `/dashboard` for the built-in charts, and sign in there with the account above.
-- The public address accepts SQL from anywhere for anyone with that password. Queries sent without it are refused.
-- Do not turn on Wodby Basic Auth for this service. ClickHouse uses the `Authorization` header for its own login, so `/play`, `/dashboard` and HTTP clients stop working behind Basic Auth. To restrict who can reach the address, use App Access or disable the route.
-- `/play` and `/dashboard` send the password in the request URL, so it can appear in ingress logs.
+- Warning: the public address accepts SQL from anywhere for anyone with that password, including statements that change or delete data. Queries sent without it are refused.
+- `/play` and `/dashboard` send the password in the URL of every query, so it can appear in ingress logs. A link such as `/play?password=...` also carries it.
+- Keep the generated password, or replace it with one as long and random. Do not share `/play` or `/dashboard` URLs or copy them into tickets or chat, and do not add the password to a URL.
+- To restrict who can reach the address, use App Access or disable the route. App Access covers this port because it has a route, and services in the environment keep connecting directly. It needs an active paid subscription.
+- Do not turn on Wodby Basic Auth for this service. ClickHouse uses the `Authorization` header for its own login, so `/play`, `/dashboard` and HTTP clients stop working behind Basic Auth.
 
 ## Changing configuration
 
