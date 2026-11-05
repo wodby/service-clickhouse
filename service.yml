@@ -131,6 +131,10 @@ workloads:
   containers:
   - name: clickhouse
     image: clickhouse/clickhouse-server
+    resources:
+      request:
+        cpu: 110
+        memory: 528
     helm:
       resources: resources
       env: envVars
