@@ -135,6 +135,9 @@ workloads:
       request:
         cpu: 110
         memory: 528
+      # ClickHouse caps its own memory use at 90% of this limit; without one it would use the node's memory.
+      limit:
+        memory: 4096
     helm:
       resources: resources
       env: envVars
