@@ -12,8 +12,8 @@ labels:
 
 options:
 - version: '26.3'
-  tag: '26.3.68.5'
-  digest: sha256:eed61db4eb6dac057a23ef43f4ee6df9ef27eea5fb485ec0e48cf7f295d82e8a
+  tag: '26.3.69.4'
+  digest: sha256:7b3e407d2ca6f7ce9461905ae5dad5ce6c123987665f385968d5d4bae82109ab
   default: true
 
   eol: '2027-03-26T00:00:00+00:00'
